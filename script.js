@@ -256,6 +256,99 @@
         return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     }
 
+    // =========================================================================
+    // CONTACT MODAL
+    // =========================================================================
+    
+    function initContactModal() {
+        const modal = document.getElementById('contact-modal');
+        const openBtn = document.getElementById('open-contact');
+        const closeBtn = document.getElementById('close-contact');
+        const form = document.getElementById('contact-form');
+        
+        if (!modal || !openBtn) return;
+        
+        let previousActiveElement = null;
+        
+        function openModal() {
+            previousActiveElement = document.activeElement;
+            modal.hidden = false;
+            document.body.style.overflow = 'hidden';
+            
+            // Focus first input after short delay for animation
+            setTimeout(() => {
+                const firstInput = modal.querySelector('input');
+                if (firstInput) firstInput.focus();
+            }, 100);
+        }
+        
+        function closeModal() {
+            modal.hidden = true;
+            document.body.style.overflow = '';
+            
+            // Return focus to trigger button
+            if (previousActiveElement) {
+                previousActiveElement.focus();
+            }
+        }
+        
+        // Open modal
+        openBtn.addEventListener('click', openModal);
+        
+        // Close modal - X button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+        
+        // Close modal - click overlay background
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Close modal - Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.hidden) {
+                closeModal();
+            }
+        });
+        
+        // Focus trap within modal
+        modal.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab') return;
+            
+            const focusableElements = modal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+        
+        // Handle form submission
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = form.querySelector('.form-submit');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
+            });
+        }
+    }
+
     /**
      * Initialize everything
      */
@@ -267,6 +360,9 @@
         if (!prefersReducedMotion()) {
             initScrollFade();
         }
+        
+        // Initialize contact modal
+        initContactModal();
         
         // Initialize testimonials carousel (if elements exist)
         if (track && dots.length > 0) {

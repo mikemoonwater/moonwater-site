@@ -12,12 +12,47 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header">
         <div class="header-inner">
             <span class="logo">moonwater</span>
-            <a href="mailto:mike@moonwater.co" class="cta-button">Let's Talk Ads</a>
+            <button type="button" class="cta-button" id="open-contact">Let's Talk</button>
         </div>
     </header>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Let's Talk</h2>
+                <button type="button" class="modal-close" id="close-contact" aria-label="Close">&times;</button>
+            </div>
+            <form action="https://formspree.io/f/xeeljqeq" method="POST" class="contact-form" id="contact-form">
+                <input type="hidden" name="_subject" value="Work with moonwater">
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company <span class="optional">(optional)</span></label>
+                    <input type="text" id="company" name="company" autocomplete="organization">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">Send</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="main">
@@ -177,7 +212,7 @@
             <article class="principle">
                 <h2 class="principle-title">
                     <span class="principle-number">11.</span>
-<button class="principle-toggle" aria-expanded="false">New purchase > all purchase</button>
+                    <button class="principle-toggle" aria-expanded="false">New purchase > all purchase</button>
                     <a href="https://www.linkedin.com/feed/update/urn:li:activity:7386025501393551360/" target="_blank" rel="noopener noreferrer" class="principle-date">· <em>Oct '25</em></a>
                 </h2>
                 <div class="principle-content" hidden>
@@ -298,77 +333,77 @@
             <div class="testimonials-container">
                 <div class="testimonials-track" id="testimonials-track">
                     
-                    <div class="testimonial" data-index="0">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Improved our execution and ad ROI immediately."</p>
                             <cite>Zack Kramer, CEO @ Coop Sleep Goods</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="1">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Innovative, technical growth partners that deliver."</p>
                             <cite>Rick Desai, VC & Managing Partner @ Listen</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="2">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Incredible GTM partners. Highly recommend."</p>
                             <cite>Stella Garber, Co-founder & CEO @ Hoop</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="3">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Transformed our Meta and Google. An invaluable partner."</p>
                             <cite>Gerardo Canales, CEO @ Sitka Seafood</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="4">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"They think like owners. A great addition for us."</p>
                             <cite>Simcha Kanter, CEO @ Kanter Auto</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="5">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Helped us scale ads profitably and precisely."</p>
                             <cite>Vanessa Chang, Director of Marketing @ Coop</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="6">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"A rare breed of thought leader & operator."</p>
                             <cite>Tim Huelskamp, CEO @ 1440</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="7">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Our cost to acquire dropped measurably in a tough market."</p>
                             <cite>Hank Adams, Founder & CEO @ Rise</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="8">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Some conversations were worth 7-figures alone."</p>
                             <cite>Chris Seo, Director of Marketing @ Speaker Lab</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="9">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Nearly 2X'd our customers in 6 months."</p>
                             <cite>Morgan Booth, Founder & CEO @ Goodsmith</cite>
                         </blockquote>
                     </div>
 
-                    <div class="testimonial" data-index="10">
+                    <div class="testimonial">
                         <blockquote>
                             <p>"Our go-to for all-things digital marketing."</p>
                             <cite>Troy Henikoff, VC & Managing Partner @ MATH</cite>
@@ -380,17 +415,17 @@
             
             <!-- Navigation Dots -->
             <div class="testimonials-nav" role="tablist" aria-label="Testimonial navigation">
-                <button class="nav-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
-                <button class="nav-dot" data-index="1" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
-                <button class="nav-dot" data-index="2" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
-                <button class="nav-dot" data-index="3" role="tab" aria-selected="false" aria-label="Testimonial 4"></button>
-                <button class="nav-dot" data-index="4" role="tab" aria-selected="false" aria-label="Testimonial 5"></button>
-                <button class="nav-dot" data-index="5" role="tab" aria-selected="false" aria-label="Testimonial 6"></button>
-                <button class="nav-dot" data-index="6" role="tab" aria-selected="false" aria-label="Testimonial 7"></button>
-                <button class="nav-dot" data-index="7" role="tab" aria-selected="false" aria-label="Testimonial 8"></button>
-                <button class="nav-dot" data-index="8" role="tab" aria-selected="false" aria-label="Testimonial 9"></button>
-                <button class="nav-dot" data-index="9" role="tab" aria-selected="false" aria-label="Testimonial 10"></button>
-                <button class="nav-dot" data-index="10" role="tab" aria-selected="false" aria-label="Testimonial 11"></button>
+                <button class="nav-dot active" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 4"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 5"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 6"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 7"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 8"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 9"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 10"></button>
+                <button class="nav-dot" role="tab" aria-selected="false" aria-label="Testimonial 11"></button>
             </div>
         </section>
     </main>
