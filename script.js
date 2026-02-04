@@ -35,6 +35,47 @@
     }
 
     // =========================================================================
+    // PRINCIPLES - Scroll-based Fade
+    // =========================================================================
+    
+    function initScrollFade() {
+        const principles = document.querySelectorAll('.principle');
+        if (!principles.length) return;
+        
+        function updateFade() {
+            const viewportBottom = window.scrollY + window.innerHeight;
+            const fadeOffset = 200; // Start fading items 200px below viewport
+            
+            principles.forEach(principle => {
+                const rect = principle.getBoundingClientRect();
+                const elementTop = rect.top + window.scrollY;
+                
+                // If element is below the viewport (plus offset), fade it
+                if (elementTop > viewportBottom + fadeOffset) {
+                    principle.classList.add('fade-in');
+                } else {
+                    principle.classList.remove('fade-in');
+                }
+            });
+        }
+        
+        // Update on scroll
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateFade();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+        
+        // Initial update
+        updateFade();
+    }
+
+    // =========================================================================
     // TESTIMONIALS - Carousel
     // =========================================================================
 
@@ -221,6 +262,11 @@
     function init() {
         // Initialize principles expand/collapse
         initPrinciples();
+        
+        // Initialize scroll-based fade for principles
+        if (!prefersReducedMotion()) {
+            initScrollFade();
+        }
         
         // Initialize testimonials carousel (if elements exist)
         if (track && dots.length > 0) {

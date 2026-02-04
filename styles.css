@@ -19,20 +19,20 @@
     
     /* Typography */
     --font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-size-base: 17px;
+    --font-size-base: 18px;
     --font-size-sm: 14px;
     --font-size-xs: 12px;
-    --font-size-lg: 19px;
-    --font-size-xl: 22px;
-    --font-size-2xl: 26px;
-    --font-size-3xl: 32px;
+    --font-size-lg: 20px;
+    --font-size-xl: 23px;
+    --font-size-2xl: 28px;
+    --font-size-3xl: 34px;
     
     /* Spacing - Tighter */
     --space-xs: 6px;
     --space-sm: 12px;
     --space-md: 20px;
     --space-lg: 28px;
-    --space-xl: 48px;
+    --space-xl: 64px;
     --space-2xl: 72px;
     
     /* Layout */
@@ -166,7 +166,8 @@ a:hover {
 
 .principle {
     padding: 8px 0;
-    transition: opacity 0.15s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .principle:first-child {
@@ -175,6 +176,11 @@ a:hover {
 
 .principles:hover .principle:not(:hover) {
     opacity: 0.35;
+}
+
+/* Scroll-based fade for principles */
+.principle.fade-in {
+    opacity: 0.25;
 }
 
 
