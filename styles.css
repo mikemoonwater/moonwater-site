@@ -39,7 +39,6 @@
     
     /* Transitions */
     --transition-fast: 120ms ease-out;
-    --transition-medium: 200ms ease-out;
 }
 
 /* Reset & Base
@@ -96,7 +95,7 @@ a:hover {
     color: var(--color-link-hover);
 }
 
-/* Header - Desktop
+/* Header
    ========================================================================== */
 .header {
     position: fixed;
@@ -401,7 +400,6 @@ a:hover {
     .principle-title {
         gap: 0.25em;
     }
-    
     
     /* Disable hover fade on mobile */
     .principles:hover .principle:not(:hover) {
