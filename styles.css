@@ -354,7 +354,8 @@ a:hover {
 @media (max-width: 900px) {
     :root {
         --font-size-base: 16px;
-        --font-size-2xl: 24px;
+        --font-size-xl: 21px;
+        --font-size-2xl: 25px;
     }
     
     .header-inner {
@@ -366,7 +367,8 @@ a:hover {
 @media (max-width: 680px) {
     :root {
         --font-size-base: 15px;
-        --font-size-2xl: 20px;
+        --font-size-xl: 19px;
+        --font-size-2xl: 22px;
         --font-size-lg: 16px;
         --space-md: 16px;
         --space-xl: 36px;
@@ -408,7 +410,8 @@ a:hover {
 /* Small Mobile */
 @media (max-width: 400px) {
     :root {
-        --font-size-2xl: 18px;
+        --font-size-xl: 17px;
+        --font-size-2xl: 20px;
     }
     
     .logo {
