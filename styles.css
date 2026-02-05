@@ -34,7 +34,7 @@
     --space-2xl: 72px;
     
     /* Layout */
-    --max-width: 640px;
+    --max-width: 800px;
     --header-height: 64px;
     
     /* Transitions */
@@ -130,7 +130,7 @@ a:hover {
 
 .cta-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 32px;
     background: var(--color-button-bg);
     color: var(--color-button-text);
     font-family: var(--font-family);
@@ -154,7 +154,7 @@ a:hover {
 .main {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: calc(var(--header-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+    padding: calc(var(--header-height) + 120px) var(--space-md) var(--space-xl);
 }
 
 /* Principles Section
@@ -226,26 +226,9 @@ a:hover {
     outline-offset: 2px;
 }
 
-a.principle-date {
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-a.principle-date:hover {
-    color: var(--color-text);
-}
-
-.principle-date em {
-    font-style: normal;
-}
-
 .principle-content {
     color: rgba(255, 255, 255, 0.75);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-xl);
     line-height: 1.5;
     padding-left: 2.6em;
     padding-top: 4px;
@@ -259,6 +242,11 @@ a.principle-date:hover {
 
 .principle-content strong {
     color: var(--color-text);
+}
+
+.principle-content .read-more {
+    font-weight: 700;
+    text-decoration: underline;
 }
 
 /* Testimonials Section

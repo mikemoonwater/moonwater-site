@@ -25,7 +25,18 @@
                     content.hidden = true;
                     article.classList.remove('expanded');
                 } else {
-                    // Expand
+                    // First, collapse all other principles
+                    toggleButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            const otherArticle = otherButton.closest('.principle');
+                            const otherContent = otherArticle.querySelector('.principle-content');
+                            otherButton.setAttribute('aria-expanded', 'false');
+                            otherContent.hidden = true;
+                            otherArticle.classList.remove('expanded');
+                        }
+                    });
+                    
+                    // Then expand this one
                     button.setAttribute('aria-expanded', 'true');
                     content.hidden = false;
                     article.classList.add('expanded');
