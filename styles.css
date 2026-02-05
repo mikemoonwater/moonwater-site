@@ -465,18 +465,25 @@ button:focus-visible {
     }
 }
 
-/* Contact Modal
+/* Contact Modal – Bold Transparent
    ========================================================================== */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2000;
     padding: var(--space-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.modal-overlay:not([hidden]) {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-overlay[hidden] {
@@ -485,54 +492,62 @@ button:focus-visible {
 
 .modal {
     background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: 24px;
     width: 100%;
-    max-width: 440px;
+    max-width: 480px;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.modal-overlay:not([hidden]) .modal {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .modal-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-md) var(--space-lg);
-    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-lg) var(--space-lg) 0;
+    margin-bottom: var(--space-lg);
 }
 
 .modal-header h2 {
     font-size: var(--font-size-xl);
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     margin: 0;
 }
 
 .modal-close {
     background: none;
     border: none;
-    color: var(--color-text);
-    font-size: 28px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--font-size-2xl);
     line-height: 1;
     cursor: pointer;
     padding: 0;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
-    transition: all var(--transition-fast);
+    border-radius: 8px;
+    transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .modal-close:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text);
 }
 
-/* Contact Form
+/* Contact Form – Bold Transparent
    ========================================================================== */
 .contact-form {
-    padding: var(--space-lg);
+    padding: 0 var(--space-lg) var(--space-lg);
 }
 
 .form-group {
@@ -541,28 +556,25 @@ button:focus-visible {
 
 .form-group label {
     display: block;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     font-weight: 600;
-    margin-bottom: 6px;
-    color: var(--color-text);
-}
-
-.form-group .optional {
-    font-weight: 400;
-    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 14px;
+    padding: 14px 16px;
     font-family: var(--font-family);
     font-size: var(--font-size-base);
     color: var(--color-text);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 6px;
-    transition: all var(--transition-fast);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .form-group input::placeholder,
@@ -573,39 +585,36 @@ button:focus-visible {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-text);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
 }
 
 .form-submit {
     width: 100%;
-    padding: 14px 20px;
+    padding: 16px 20px;
     background: var(--color-button-bg);
     color: var(--color-button-text);
     font-family: var(--font-family);
     font-size: var(--font-size-base);
-    font-weight: 600;
-    border: 2px solid transparent;
-    border-radius: 6px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
     margin-top: var(--space-sm);
 }
 
 .form-submit:hover {
-    background: var(--color-bg);
-    color: var(--color-text);
-    border: 2px solid var(--color-text);
-    transform: translateY(-1px);
+    opacity: 0.9;
 }
 
 .form-submit:active {
-    transform: translateY(0);
+    transform: scale(0.98);
 }
 
 .form-submit:disabled {
@@ -614,25 +623,28 @@ button:focus-visible {
     transform: none;
 }
 
-/* Mobile Modal - Full screen feel */
+/* Mobile Modal */
 @media (max-width: 680px) {
     .modal-overlay {
         padding: 0;
         align-items: flex-end;
     }
-    
+
     .modal {
         max-width: 100%;
-        max-height: 95vh;
-        border-radius: 16px 16px 0 0;
-        border-bottom: none;
+        border-radius: 24px 24px 0 0;
+        transform: translateY(100%);
     }
-    
+
+    .modal-overlay:not([hidden]) .modal {
+        transform: translateY(0);
+    }
+
     .modal-header {
-        padding: var(--space-md);
+        padding: var(--space-lg) var(--space-md) 0;
     }
-    
+
     .contact-form {
-        padding: var(--space-md);
+        padding: 0 var(--space-md) var(--space-md);
     }
 }
