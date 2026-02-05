@@ -182,6 +182,11 @@ a:hover {
     opacity: 0.35;
 }
 
+/* Dim principles when one is expanded */
+.principles:has(.principle.expanded) .principle:not(.expanded) {
+    opacity: 0.35;
+}
+
 /* Scroll-based fade for principles */
 .principle.fade-in {
     opacity: 0.25;
@@ -397,9 +402,6 @@ a:hover {
         gap: 0.25em;
     }
     
-    .principle-content {
-        padding-left: 0;
-    }
     
     /* Disable hover fade on mobile */
     .principles:hover .principle:not(:hover) {
