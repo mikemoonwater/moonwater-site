@@ -154,7 +154,7 @@ a:hover {
 .main {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: calc(var(--header-height) + 120px) var(--space-md) var(--space-xl);
+    padding: calc(var(--header-height) + 80px) var(--space-md) var(--space-xl);
 }
 
 /* Principles Section
@@ -168,6 +168,12 @@ a:hover {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+
+/* Progressive fade for principles */
+.principle:nth-child(n+1) { opacity: 1; }
+.principle:nth-child(n+6) { opacity: 0.95; }
+.principle:nth-child(n+11) { opacity: 0.85; }
+.principle:nth-child(n+16) { opacity: 0.75; }
 
 .principle:first-child {
     padding-top: 0;
