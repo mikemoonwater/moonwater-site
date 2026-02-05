@@ -170,7 +170,6 @@ a:hover {
 }
 
 /* Progressive fade for principles */
-.principle:nth-child(n+1) { opacity: 1; }
 .principle:nth-child(n+6) { opacity: 0.95; }
 .principle:nth-child(n+11) { opacity: 0.85; }
 .principle:nth-child(n+16) { opacity: 0.75; }
