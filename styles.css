@@ -195,10 +195,9 @@ a:hover {
     font-size: var(--font-size-2xl);
     font-weight: 700;
     margin-bottom: 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 2.5em 1fr;
     align-items: baseline;
-    gap: 0.3em;
     line-height: 1.1;
 }
 
@@ -239,7 +238,7 @@ a:hover {
     color: rgba(255, 255, 255, 0.75);
     font-size: var(--font-size-xl);
     line-height: 1.5;
-    padding-left: 2.6em;
+    padding-left: 2.5em;
     padding-top: 4px;
     padding-bottom: 8px;
     overflow: hidden;
@@ -395,10 +394,6 @@ a:hover {
     
     .principle {
         padding: 6px 0;
-    }
-    
-    .principle-title {
-        gap: 0.25em;
     }
     
     /* Disable hover fade on mobile */
