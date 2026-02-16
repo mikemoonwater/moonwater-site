@@ -92,7 +92,7 @@
 
     // Configuration
     const AUTOPLAY_INTERVAL = 6000; // 6 seconds
-    const TOTAL_TESTIMONIALS = 11;
+    const TOTAL_TESTIMONIALS = 12;
 
     // State
     let currentIndex = 0;
