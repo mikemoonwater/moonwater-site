@@ -92,16 +92,15 @@
 
     // Configuration
     const AUTOPLAY_INTERVAL = 6000; // 6 seconds
-    const TOTAL_TESTIMONIALS = 17;
+
+    // DOM Elements
+    const track = document.getElementById('testimonials-track');
+    const dots = document.querySelectorAll('.nav-dot');
 
     // State
     let currentIndex = 0;
     let autoplayTimer = null;
     let isPaused = false;
-
-    // DOM Elements
-    const track = document.getElementById('testimonials-track');
-    const dots = document.querySelectorAll('.nav-dot');
 
     /**
      * Go to a specific testimonial
@@ -110,8 +109,8 @@
     function goToTestimonial(index) {
         // Wrap around
         if (index < 0) {
-            index = TOTAL_TESTIMONIALS - 1;
-        } else if (index >= TOTAL_TESTIMONIALS) {
+            index = dots.length - 1;
+        } else if (index >= dots.length) {
             index = 0;
         }
 
@@ -182,13 +181,13 @@
             dot.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
                     e.preventDefault();
-                    const nextIndex = (index + 1) % TOTAL_TESTIMONIALS;
+                    const nextIndex = (index + 1) % dots.length;
                     dots[nextIndex].focus();
                     goToTestimonial(nextIndex);
                     resetAutoplay();
                 } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
                     e.preventDefault();
-                    const prevIndex = (index - 1 + TOTAL_TESTIMONIALS) % TOTAL_TESTIMONIALS;
+                    const prevIndex = (index - 1 + dots.length) % dots.length;
                     dots[prevIndex].focus();
                     goToTestimonial(prevIndex);
                     resetAutoplay();
