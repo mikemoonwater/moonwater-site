@@ -124,13 +124,13 @@ All content is in `index.html`. To update:
 
 ### Style Changes
 
-All styles are in `styles.css`. Key sections:
-- Colors: Lines 8-18 (CSS variables)
-- Typography: Lines 20-28
-- Spacing: Lines 30-36
-- Header: Lines 101-170
-- Principles: Lines 212-266
-- Testimonials: Lines 268-341
+All styles are in `styles.css`, organized under labeled section comments. Search for the section header to jump to it:
+- `/* CSS Custom Properties */` — colors, typography, spacing, layout variables
+- `/* Header */` — top bar and CTA button
+- `/* Principles Section */` — numbered list and expand/collapse styling
+- `/* Testimonials Section */` — carousel and nav dots
+- `/* Contact Modal */` and `/* Contact Form */` — "Let's Talk" modal
+- `/* Responsive Design */` — tablet, mobile, and small-mobile breakpoints
 
 ### Re-deploying
 
@@ -164,7 +164,5 @@ All styles are in `styles.css`. Key sections:
 ---
 
 ## Support
-
-For questions about this build, you can reach out to the developer who created it.
 
 For Cloudflare Pages issues, see: https://developers.cloudflare.com/pages/

@@ -352,8 +352,17 @@
             form.addEventListener('submit', function(e) {
                 const submitBtn = form.querySelector('.form-submit');
                 if (submitBtn) {
+                    const originalText = submitBtn.textContent;
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending...';
+
+                    // On success, Formspree redirects away from the page so this
+                    // timeout never runs. On network failure or stall, re-enable
+                    // so the user can retry instead of being stuck.
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }, 10000);
                 }
             });
         }

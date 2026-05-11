@@ -122,7 +122,7 @@ a:hover {
 
 .logo {
     font-size: var(--font-size-lg);
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: -0.02em;
     color: var(--color-text);
 }
@@ -134,7 +134,7 @@ a:hover {
     color: var(--color-button-text);
     font-family: var(--font-family);
     font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     border: none;
     border-radius: 6px;
@@ -265,7 +265,7 @@ a:hover {
 
 .testimonials-headline {
     font-size: var(--font-size-sm);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-text-secondary);
     text-align: center;
     margin-bottom: var(--space-lg);
@@ -293,7 +293,7 @@ a:hover {
 
 .testimonial p {
     font-size: var(--font-size-xl);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.5;
     color: var(--color-text);
     margin-bottom: var(--space-md);
@@ -517,7 +517,7 @@ button:focus-visible {
 
 .modal-header h2 {
     font-size: var(--font-size-xl);
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: -0.02em;
     margin: 0;
 }
@@ -557,7 +557,7 @@ button:focus-visible {
 .form-group label {
     display: block;
     font-size: var(--font-size-xs);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 8px;
