@@ -340,6 +340,15 @@ a:hover {
     outline-offset: 2px;
 }
 
+.testimonials-counter {
+    display: none;
+    margin-top: var(--space-lg);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
 /* Footer
    ========================================================================== */
 .footer {
@@ -404,7 +413,16 @@ a:hover {
     .testimonial p {
         font-size: var(--font-size-lg);
     }
-    
+
+    /* 21 dots wrap/overflow on narrow screens; swap for a compact counter */
+    .testimonials-nav {
+        display: none;
+    }
+
+    .testimonials-counter {
+        display: block;
+    }
+
 }
 
 /* Small Mobile */

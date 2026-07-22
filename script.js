@@ -96,6 +96,8 @@
     // DOM Elements
     const track = document.getElementById('testimonials-track');
     const dots = document.querySelectorAll('.nav-dot');
+    const counterCurrent = document.getElementById('testimonial-counter-current');
+    const counterTotal = document.getElementById('testimonial-counter-total');
 
     // State
     let currentIndex = 0;
@@ -126,6 +128,11 @@
             dot.classList.toggle('active', isActive);
             dot.setAttribute('aria-selected', isActive.toString());
         });
+
+        // Update mobile counter
+        if (counterCurrent) {
+            counterCurrent.textContent = currentIndex + 1;
+        }
     }
 
     /**
@@ -385,6 +392,10 @@
         
         // Initialize testimonials carousel (if elements exist)
         if (track && dots.length > 0) {
+            if (counterTotal) {
+                counterTotal.textContent = dots.length;
+            }
+
             initDots();
             initHoverPause();
             initVisibilityHandler();
