@@ -248,10 +248,6 @@ a:hover {
     display: none;
 }
 
-.principle-content strong {
-    color: var(--color-text);
-}
-
 .principle-content .read-more {
     font-weight: 700;
     text-decoration: underline;
