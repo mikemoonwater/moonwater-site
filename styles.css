@@ -25,7 +25,8 @@
     --font-size-lg: 20px;
     --font-size-xl: 23px;
     --font-size-2xl: 28px;
-    
+    --font-size-3xl: 48px;
+
     /* Spacing */
     --space-sm: 12px;
     --space-md: 20px;
@@ -154,6 +155,27 @@ a:hover {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: calc(var(--header-height) + 80px) var(--space-md) var(--space-xl);
+}
+
+/* Hero
+   ========================================================================== */
+.hero {
+    margin-bottom: var(--space-2xl);
+}
+
+.hero-headline {
+    font-size: var(--font-size-3xl);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-sm);
+}
+
+.hero-subhead {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
 }
 
 /* Principles Section
@@ -369,8 +391,9 @@ a:hover {
         --font-size-base: 16px;
         --font-size-xl: 21px;
         --font-size-2xl: 25px;
+        --font-size-3xl: 40px;
     }
-    
+
     .header-inner {
         padding: 0 var(--space-md);
     }
@@ -382,6 +405,7 @@ a:hover {
         --font-size-base: 15px;
         --font-size-xl: 19px;
         --font-size-2xl: 22px;
+        --font-size-3xl: 32px;
         --font-size-lg: 16px;
         --space-md: 16px;
         --space-xl: 36px;
@@ -426,6 +450,7 @@ a:hover {
     :root {
         --font-size-xl: 17px;
         --font-size-2xl: 20px;
+        --font-size-3xl: 28px;
     }
     
     .logo {
