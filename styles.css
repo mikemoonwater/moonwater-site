@@ -434,7 +434,7 @@ a:hover {
         font-size: var(--font-size-lg);
     }
 
-    /* 21 dots wrap/overflow on narrow screens; swap for a compact counter */
+    /* 22 dots wrap/overflow on narrow screens; swap for a compact counter */
     .testimonials-nav {
         display: none;
     }
